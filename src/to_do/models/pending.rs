@@ -1,7 +1,8 @@
-use crate::to_do::traits::crud::Crud;
+use crate::to_do::traits::{crud::Crud, task::Task};
 
 use super::base::Base;
 
+#[derive(Clone)]
 pub struct Pending {
     pub super_struct: Base,
 }
@@ -18,3 +19,13 @@ impl Pending {
 }
 
 impl Crud for Pending {}
+
+impl Task for Pending {
+    fn get_title(&self) -> &String {
+        &self.super_struct.title
+    }
+
+    fn get_status(&self) -> &crate::to_do::enums::TaskStatus {
+        &self.super_struct.status
+    }
+}

@@ -5,6 +5,7 @@ pub mod enums;
 pub mod models;
 pub mod traits;
 
+#[derive(Clone)]
 pub enum ItemTypes {
     Pending(Pending),
     Done(Done),
