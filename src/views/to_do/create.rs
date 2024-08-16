@@ -8,7 +8,7 @@ use crate::{
 };
 
 pub async fn create(req: HttpRequest) -> String {
-    let state: Map<String, Value> = read_file("./state.json");
+    let mut state: Map<String, Value> = read_file("./state.json");
     let title = req.match_info().get("title").unwrap().to_string();
     let item = to_do_factory(&title.as_str(), TaskStatus::PENDING);
 
