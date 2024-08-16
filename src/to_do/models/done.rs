@@ -1,3 +1,5 @@
+use crate::to_do::traits::crud::Crud;
+
 use super::base::Base;
 
 pub struct Done {
@@ -14,3 +16,5 @@ impl Done {
         }
     }
 }
+
+impl Crud for Done {}

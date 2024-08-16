@@ -3,7 +3,7 @@ use models::{done::Done, pending::Pending};
 
 pub mod enums;
 pub mod models;
-// pub mod traits;
+pub mod traits;
 
 pub enum ItemTypes {
     Pending(Pending),
